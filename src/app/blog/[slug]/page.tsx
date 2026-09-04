@@ -56,13 +56,13 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div>
           <Link
             href="/blog"
-            className="text-sm font-medium text-teal-800 hover:underline dark:text-teal-300"
+            className="text-sm font-medium text-blue-800 hover:underline dark:text-blue-400"
           >
             ← Ideas
           </Link>
 
           <header className="mt-6 max-w-2xl">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-stone-500 dark:text-stone-400">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500 dark:text-slate-400">
               <time dateTime={post.date}>{formatDate(post.date)}</time>
               <span aria-hidden="true">·</span>
               <span>{post.readingTime}</span>
@@ -73,10 +73,10 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </>
               ) : null}
             </div>
-            <h1 className="mt-3 font-serif text-3xl font-semibold leading-tight tracking-tight text-stone-900 sm:text-[2.25rem] dark:text-stone-50">
+            <h1 className="mt-3 font-serif text-3xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-[2.25rem] dark:text-slate-50">
               {post.title}
             </h1>
-            <p className="mt-4 text-lg leading-relaxed text-stone-600 dark:text-stone-400">
+            <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
               {post.description}
             </p>
             {post.tags.length > 0 && (
@@ -84,7 +84,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 {post.tags.map((tag) => (
                   <li
                     key={tag}
-                    className="rounded-full bg-stone-100 px-2.5 py-0.5 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300"
+                    className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
                   >
                     {tag}
                   </li>

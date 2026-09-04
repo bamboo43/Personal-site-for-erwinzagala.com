@@ -74,7 +74,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-teal-800 focus:px-3 focus:py-2 focus:text-white"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-blue-800 focus:px-3 focus:py-2 focus:text-white"
         >
           Skip to content
         </a>

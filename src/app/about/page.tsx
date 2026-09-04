@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const linkClass =
-  "font-medium text-teal-800 underline-offset-4 hover:underline dark:text-teal-300";
+  "font-medium text-blue-800 underline-offset-4 hover:underline dark:text-blue-400";
 
 function ExternalOrPlain({
   href,
@@ -26,7 +26,7 @@ function ExternalOrPlain({
 }) {
   if (!href || href === "#") {
     return (
-      <span className="font-medium text-stone-900 dark:text-stone-100">
+      <span className="font-medium text-slate-900 dark:text-slate-100">
         {children}
       </span>
     );
@@ -46,14 +46,14 @@ function ExternalOrPlain({
 export default function AboutPage() {
   return (
     <Container width="narrow" className="py-12 sm:py-16">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
         About
       </p>
-      <h1 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl dark:text-stone-50">
+      <h1 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-slate-50">
         About Me
       </h1>
 
-      <div className="mt-10 space-y-5 text-base leading-relaxed text-stone-700 dark:text-stone-300">
+      <div className="mt-10 space-y-5 text-base leading-relaxed text-slate-700 dark:text-slate-300">
         <p>I&apos;m Erwin Zagala.</p>
 
         <p>
@@ -127,7 +127,7 @@ export default function AboutPage() {
 
         <p>
           The thread connecting most of them is something I call{" "}
-          <strong className="font-semibold text-stone-900 dark:text-stone-100">
+          <strong className="font-semibold text-slate-900 dark:text-slate-100">
             Make It EZ
           </strong>
           .
@@ -152,11 +152,11 @@ export default function AboutPage() {
         <p>That&apos;s what it&apos;s for.</p>
       </div>
 
-      <section className="mt-14 border-t border-stone-200/80 pt-10 dark:border-stone-800">
-        <h2 className="font-serif text-xl font-semibold tracking-tight text-stone-900 dark:text-stone-50">
+      <section className="mt-14 border-t border-slate-200/80 pt-10 dark:border-slate-800">
+        <h2 className="font-serif text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
           A little more formally
         </h2>
-        <div className="mt-5 space-y-4 text-base leading-relaxed text-stone-700 dark:text-stone-300">
+        <div className="mt-5 space-y-4 text-base leading-relaxed text-slate-700 dark:text-slate-300">
           <p>
             I&apos;m a Filipino lawyer and partner at{" "}
             <ExternalOrPlain href={siteConfig.links.legalAccess}>
@@ -188,10 +188,10 @@ export default function AboutPage() {
 
           <p>I like taking complicated things and making them easier.</p>
 
-          <p className="pt-4 text-sm text-stone-500 dark:text-stone-400">
+          <p className="pt-4 text-sm text-slate-500 dark:text-slate-400">
             <Link
               href="/contact"
-              className="font-medium text-teal-800 underline-offset-4 hover:underline dark:text-teal-300"
+              className="font-medium text-blue-800 underline-offset-4 hover:underline dark:text-blue-400"
             >
               Say hello
             </Link>

@@ -15,8 +15,8 @@ function RailBlock({
   children: ReactNode;
 }) {
   return (
-    <section className="border-t border-stone-200/80 pt-5 first:border-t-0 first:pt-0 dark:border-stone-800">
-      <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500 dark:text-stone-400">
+    <section className="border-t border-slate-200/80 pt-5 first:border-t-0 first:pt-0 dark:border-slate-800">
+      <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">
         {title}
       </h2>
       <div className="mt-3">{children}</div>
@@ -31,7 +31,7 @@ function PostLinks({ posts }: { posts: PostMeta[] }) {
         <li key={post.slug}>
           <Link
             href={`/blog/${post.slug}`}
-            className="text-sm leading-snug text-stone-700 transition hover:text-teal-800 dark:text-stone-300 dark:hover:text-teal-300"
+            className="text-sm leading-snug text-slate-700 transition hover:text-blue-800 dark:text-slate-300 dark:hover:text-blue-400"
           >
             {post.title}
           </Link>
@@ -51,10 +51,10 @@ export function DiscoveryRail({ excludeSlug }: { excludeSlug?: string }) {
   return (
     <aside className="space-y-6 text-sm">
       <RailBlock title="About Erwin">
-        <p className="leading-relaxed text-stone-600 dark:text-stone-400">
+        <p className="leading-relaxed text-slate-600 dark:text-slate-400">
           I write and teach to make complicated things easier to understand, decide, and do.
           {" "}
-          <Link href="/about" className="font-medium text-teal-800 hover:underline dark:text-teal-300">
+          <Link href="/about" className="font-medium text-blue-800 hover:underline dark:text-blue-400">
             More
           </Link>
         </p>
@@ -71,7 +71,7 @@ export function DiscoveryRail({ excludeSlug }: { excludeSlug?: string }) {
               {thing.href ? (
                 <a
                   href={thing.href}
-                  className="text-sm text-stone-700 hover:text-teal-800 dark:text-stone-300 dark:hover:text-teal-300"
+                  className="text-sm text-slate-700 hover:text-blue-800 dark:text-slate-300 dark:hover:text-blue-400"
                   {...(thing.href.startsWith("http")
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
@@ -79,7 +79,7 @@ export function DiscoveryRail({ excludeSlug }: { excludeSlug?: string }) {
                   {thing.title}
                 </a>
               ) : (
-                <span className="text-stone-700 dark:text-stone-300">{thing.title}</span>
+                <span className="text-slate-700 dark:text-slate-300">{thing.title}</span>
               )}
             </li>
           ))}
@@ -96,7 +96,7 @@ export function DiscoveryRail({ excludeSlug }: { excludeSlug?: string }) {
             <li key={cat.slug}>
               <Link
                 href={`/blog#${cat.slug}`}
-                className="rounded-full border border-stone-200 px-2.5 py-0.5 text-xs text-stone-600 transition hover:border-teal-700/40 hover:text-teal-800 dark:border-stone-700 dark:text-stone-300 dark:hover:border-teal-400/40 dark:hover:text-teal-300"
+                className="rounded-full border border-slate-200 px-2.5 py-0.5 text-xs text-slate-600 transition hover:border-blue-700/40 hover:text-blue-800 dark:border-slate-700 dark:text-slate-300 dark:hover:border-blue-400/40 dark:hover:text-blue-400"
               >
                 {cat.label}
               </Link>
@@ -109,13 +109,13 @@ export function DiscoveryRail({ excludeSlug }: { excludeSlug?: string }) {
         <RailBlock title="Watch">
           <Link
             href={`/watch/${video.id}`}
-            className="block text-sm leading-snug text-stone-700 hover:text-teal-800 dark:text-stone-300 dark:hover:text-teal-300"
+            className="block text-sm leading-snug text-slate-700 hover:text-blue-800 dark:text-slate-300 dark:hover:text-blue-400"
           >
             {video.title}
           </Link>
           <Link
             href="/watch"
-            className="mt-2 inline-block text-xs font-medium text-teal-800 hover:underline dark:text-teal-300"
+            className="mt-2 inline-block text-xs font-medium text-blue-800 hover:underline dark:text-blue-400"
           >
             All videos →
           </Link>
@@ -126,7 +126,7 @@ export function DiscoveryRail({ excludeSlug }: { excludeSlug?: string }) {
         <EmailSignup compact />
       </RailBlock>
 
-      <p className="pt-2 text-xs text-stone-400 dark:text-stone-500">
+      <p className="pt-2 text-xs text-slate-400 dark:text-slate-500">
         {siteConfig.tagline}
       </p>
     </aside>
@@ -135,8 +135,8 @@ export function DiscoveryRail({ excludeSlug }: { excludeSlug?: string }) {
 
 export function ExploreMore({ excludeSlug }: { excludeSlug?: string }) {
   return (
-    <div className="mt-14 border-t border-stone-200/80 pt-10 dark:border-stone-800 lg:hidden">
-      <h2 className="font-serif text-2xl font-semibold text-stone-900 dark:text-stone-50">
+    <div className="mt-14 border-t border-slate-200/80 pt-10 dark:border-slate-800 lg:hidden">
+      <h2 className="font-serif text-2xl font-semibold text-slate-900 dark:text-slate-50">
         Explore More
       </h2>
       <div className="mt-6">

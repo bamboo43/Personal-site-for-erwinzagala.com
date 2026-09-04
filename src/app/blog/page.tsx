@@ -21,13 +21,13 @@ export default function BlogIndexPage() {
 
   return (
     <Container width="wide" className="py-12 sm:py-16">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
         Ideas
       </p>
-      <h1 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl dark:text-stone-50">
+      <h1 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-slate-50">
         Essays & notes
       </h1>
-      <p className="mt-4 max-w-2xl text-base leading-relaxed text-stone-600 dark:text-stone-400">
+      <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-400">
         Sample posts for this draft — realistic themes around Philippine law, practice,
         teaching, and the Make It EZ mindset. Treat them as placeholders until real
         publishing begins.
@@ -39,14 +39,14 @@ export default function BlogIndexPage() {
             key={cat.slug}
             id={cat.slug}
             href={`#${cat.slug}`}
-            className="rounded-full border border-stone-200 px-3 py-1 text-xs font-medium text-stone-600 transition hover:border-teal-700/40 hover:text-teal-800 dark:border-stone-700 dark:text-stone-300 dark:hover:border-teal-400/40 dark:hover:text-teal-300"
+            className="rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-slate-600 transition hover:border-blue-700/40 hover:text-blue-800 dark:border-slate-700 dark:text-slate-300 dark:hover:border-blue-400/40 dark:hover:text-blue-400"
           >
             {cat.label}
           </a>
         ))}
       </div>
 
-      <div className="mt-10 divide-y divide-stone-200/70 dark:divide-stone-800">
+      <div className="mt-10 divide-y divide-slate-200/70 dark:divide-slate-800">
         {posts.map((post) => (
           <PostCard key={post.slug} post={post} quiet />
         ))}

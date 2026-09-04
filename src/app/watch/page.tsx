@@ -19,17 +19,17 @@ export default function WatchPage() {
 
   return (
     <Container width="wide" className="py-12 sm:py-16">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
         Watch
       </p>
-      <h1 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl dark:text-stone-50">
+      <h1 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-slate-50">
         Teaching & explainers
       </h1>
-      <p className="mt-4 max-w-2xl text-base leading-relaxed text-stone-600 dark:text-stone-400">
+      <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-400">
         {videos.length} videos from{" "}
         <a
           href={siteConfig.links.legalGuide}
-          className="font-medium text-teal-800 underline-offset-4 hover:underline dark:text-teal-300"
+          className="font-medium text-blue-800 underline-offset-4 hover:underline dark:text-blue-400"
           target="_blank"
           rel="noopener noreferrer"
         >

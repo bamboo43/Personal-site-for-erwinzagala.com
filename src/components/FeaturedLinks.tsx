@@ -25,18 +25,18 @@ export function FeaturedLinks() {
         <a
           key={item.title}
           href={item.href}
-          className="group flex flex-col rounded-2xl border border-stone-200/80 bg-white/60 p-5 transition hover:border-teal-700/30 dark:border-stone-800 dark:bg-stone-900/40 dark:hover:border-teal-400/30"
+          className="group flex flex-col rounded-2xl border border-slate-200/80 bg-white/60 p-5 transition hover:border-blue-700/30 dark:border-slate-800 dark:bg-slate-900/40 dark:hover:border-blue-400/30"
           {...(item.href.startsWith("http")
             ? { target: "_blank", rel: "noopener noreferrer" }
             : {})}
         >
-          <h3 className="font-serif text-lg font-semibold text-stone-900 group-hover:text-teal-800 dark:text-stone-50 dark:group-hover:text-teal-300">
+          <h3 className="font-serif text-lg font-semibold text-slate-900 group-hover:text-blue-800 dark:text-slate-50 dark:group-hover:text-blue-400">
             {item.title}
           </h3>
-          <p className="mt-2 flex-1 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+          <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
             {item.blurb}
           </p>
-          <span className="mt-4 text-sm font-medium text-teal-800 dark:text-teal-300">
+          <span className="mt-4 text-sm font-medium text-blue-800 dark:text-blue-400">
             Visit →
           </span>
         </a>

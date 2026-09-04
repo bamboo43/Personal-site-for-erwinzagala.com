@@ -6,9 +6,9 @@
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-newsreader), ui-serif, Georgia, "Times New Roman", serif;
-  --color-cream: #faf8f5;
-  --color-ink: #1c1917;
-  --color-accent: #0f766e;
+  --color-cream: #f8fafc;
+  --color-ink: #0f172a;
+  --color-accent: #1d4ed8;
 }
 
 html {
@@ -26,8 +26,8 @@ body {
 
 .dark body,
 html.dark body {
-  background-color: #0c0a09;
-  color: #fafaf9;
+  background-color: #020617;
+  color: #f8fafc;
 }
 
 ::selection {
@@ -35,25 +35,25 @@ html.dark body {
 }
 
 .prose-ez {
-  --tw-prose-body: #44403c;
-  --tw-prose-headings: #1c1917;
-  --tw-prose-links: #0f766e;
-  --tw-prose-bold: #1c1917;
-  --tw-prose-quotes: #57534e;
-  --tw-prose-quote-borders: #99f6e4;
-  --tw-prose-code: #134e4a;
+  --tw-prose-body: #475569;
+  --tw-prose-headings: #0f172a;
+  --tw-prose-links: #1d4ed8;
+  --tw-prose-bold: #0f172a;
+  --tw-prose-quotes: #64748b;
+  --tw-prose-quote-borders: #93c5fd;
+  --tw-prose-code: #1e3a8a;
   font-size: 1.0625rem;
   line-height: 1.75;
 }
 
 .dark .prose-ez {
-  --tw-prose-body: #d6d3d1;
-  --tw-prose-headings: #fafaf9;
-  --tw-prose-links: #5eead4;
-  --tw-prose-bold: #fafaf9;
-  --tw-prose-quotes: #a8a29e;
-  --tw-prose-quote-borders: #0f766e;
-  --tw-prose-code: #99f6e4;
+  --tw-prose-body: #cbd5e1;
+  --tw-prose-headings: #f8fafc;
+  --tw-prose-links: #60a5fa;
+  --tw-prose-bold: #f8fafc;
+  --tw-prose-quotes: #94a3b8;
+  --tw-prose-quote-borders: #1d4ed8;
+  --tw-prose-code: #93c5fd;
 }
 
 .prose-ez p {
