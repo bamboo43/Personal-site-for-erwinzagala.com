@@ -21,6 +21,7 @@ body {
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .dark body,
@@ -41,6 +42,8 @@ html.dark body {
   --tw-prose-quotes: #57534e;
   --tw-prose-quote-borders: #99f6e4;
   --tw-prose-code: #134e4a;
+  font-size: 1.0625rem;
+  line-height: 1.75;
 }
 
 .dark .prose-ez {
@@ -51,4 +54,14 @@ html.dark body {
   --tw-prose-quotes: #a8a29e;
   --tw-prose-quote-borders: #0f766e;
   --tw-prose-code: #99f6e4;
+}
+
+.prose-ez p {
+  margin-top: 1.15em;
+  margin-bottom: 1.15em;
+}
+
+.prose-ez h2 {
+  margin-top: 2em;
+  letter-spacing: -0.01em;
 }

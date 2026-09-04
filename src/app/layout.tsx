@@ -30,11 +30,12 @@ export const metadata: Metadata = {
   creator: siteConfig.name,
   keywords: [
     "Erwin Zagala",
-    "Filipino lawyer",
-    "Legal Access",
-    "Legal Guide Philippines",
-    "Project Gateway",
+    "Make It EZ",
     "Philippine law",
+    "Legal Guide",
+    "Legal Access",
+    "essays",
+    "teaching",
   ],
   openGraph: {
     type: "website",

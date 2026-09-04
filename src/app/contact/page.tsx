@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <Container className="py-14 sm:py-16">
-      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-800 dark:text-teal-300">
+    <Container className="py-12 sm:py-16">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
         Contact
       </p>
-      <h1 className="mt-3 font-serif text-4xl font-semibold tracking-tight text-stone-900 dark:text-stone-50">
-        Let&apos;s talk.
+      <h1 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl dark:text-stone-50">
+        Say hello.
       </h1>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-stone-600 dark:text-stone-400">
         For speaking, collaborations, media, or general inquiries, use the form below or email{" "}
@@ -33,7 +33,7 @@ export default function ContactPage() {
         route you properly.
       </p>
 
-      <div className="mt-10 max-w-xl rounded-2xl border border-stone-200/80 bg-white/80 p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900/50 sm:p-8">
+      <div className="mt-10 max-w-xl rounded-2xl border border-stone-200/80 bg-white/60 p-6 dark:border-stone-800 dark:bg-stone-900/40 sm:p-8">
         <ContactForm />
       </div>
     </Container>

@@ -2,7 +2,7 @@
   "name": "erwinzagala-com",
   "version": "0.1.0",
   "private": true,
-  "description": "Personal website for attorney Erwin Zagala",
+  "description": "Personal intellectual home for Erwin Zagala — Make It EZ",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

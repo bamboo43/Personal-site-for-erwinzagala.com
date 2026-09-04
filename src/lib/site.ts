@@ -1,8 +1,9 @@
 export const siteConfig = {
   name: "Erwin Zagala",
-  title: "Erwin Zagala — Lawyer · Educator · Builder",
+  title: "Erwin Zagala — Make It EZ",
+  tagline: "Make complicated things easier.",
   description:
-    "Filipino lawyer, legal educator, and entrepreneur. Partner at Legal Access Law Offices; creator of Legal Guide Philippines; building Project Gateway and related ventures.",
+    "Ideas, essays, teaching, and tools from Erwin Zagala. Make It EZ — making complicated things easier to understand, decide, and do.",
   url: "https://erwinzagala.com",
   email: "erwin@legalaccess.ph",
   location: "Philippines",
