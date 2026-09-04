@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { siteConfig } from "@/lib/site";
@@ -13,9 +14,38 @@ export const metadata: Metadata = {
   },
 };
 
+const linkClass =
+  "font-medium text-teal-800 underline-offset-4 hover:underline dark:text-teal-300";
+
+function ExternalOrPlain({
+  href,
+  children,
+}: {
+  href: string;
+  children: ReactNode;
+}) {
+  if (!href || href === "#") {
+    return (
+      <span className="font-medium text-stone-900 dark:text-stone-100">
+        {children}
+      </span>
+    );
+  }
+  return (
+    <a
+      href={href}
+      className={linkClass}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {children}
+    </a>
+  );
+}
+
 export default function AboutPage() {
   return (
-    <Container width="default" className="py-12 sm:py-16">
+    <Container width="narrow" className="py-12 sm:py-16">
       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
         About
       </p>
@@ -23,115 +53,142 @@ export default function AboutPage() {
         About Me
       </h1>
 
-      <div className="mt-10 grid gap-10 sm:grid-cols-[140px_1fr] sm:gap-12">
-        <div className="mx-auto w-full max-w-[140px] sm:mx-0">
-          <div
-            className="aspect-square w-full rounded-2xl border border-dashed border-stone-300 bg-gradient-to-br from-stone-100 to-teal-50/60 dark:border-stone-700 dark:from-stone-900 dark:to-teal-950/30"
-            role="img"
-            aria-label="Photo placeholder for Erwin Zagala"
-          >
-            <div className="flex h-full flex-col items-center justify-center gap-1 p-3 text-center">
-              <span className="font-serif text-2xl text-stone-400 dark:text-stone-500">EZ</span>
-              <span className="text-[10px] text-stone-500 dark:text-stone-400">Photo soon</span>
-            </div>
-          </div>
-        </div>
+      <div className="mt-10 space-y-5 text-base leading-relaxed text-stone-700 dark:text-stone-300">
+        <p>I&apos;m Erwin Zagala.</p>
 
-        <div className="space-y-5 text-base leading-relaxed text-stone-700 dark:text-stone-300">
-          <p>
-            I&apos;m{" "}
-            <strong className="font-semibold text-stone-900 dark:text-stone-100">
-              Erwin Zagala
-            </strong>
-            .
-          </p>
-          <p>
-            I&apos;m a lawyer, teacher, entrepreneur, and builder. The through-line is
-            simple: take something complicated. Understand it. Then make it easier.
-          </p>
-          <p>
-            I do that through{" "}
-            <a
-              href={siteConfig.links.legalAccess}
-              className="font-medium text-teal-800 underline-offset-4 hover:underline dark:text-teal-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Legal Access Law Offices
-            </a>
-            ,{" "}
-            <a
-              href={siteConfig.links.legalGuide}
-              className="font-medium text-teal-800 underline-offset-4 hover:underline dark:text-teal-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Legal Guide Philippines
-            </a>
-            , and{" "}
-            <a
-              href={siteConfig.links.projectGateway}
-              className="font-medium text-teal-800 underline-offset-4 hover:underline dark:text-teal-300"
-              {...(siteConfig.links.projectGateway.startsWith("http")
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-            >
-              Project Gateway
-            </a>
-            . I&apos;ve written books, taught thousands of people, made videos, and built
-            courses. Changing my mind is a feature, not a bug.
-          </p>
-          <p>
-            This site is where I remember and share — essays, videos, notes, and the other
-            things that belong in one place.{" "}
-            <strong className="font-semibold text-stone-900 dark:text-stone-100">
-              Make It EZ
-            </strong>{" "}
-            means removing friction, not making things simplistic. I&apos;m still figuring
-            things out. Think of this place as an archive, a workshop, and a notebook.
-          </p>
-          <p>If you find something useful here, good.</p>
-        </div>
+        <p>
+          I&apos;m a lawyer, teacher, entrepreneur, and builder of things that I think
+          should work better.
+        </p>
+
+        <p>A lot of what I do comes back to the same instinct:</p>
+
+        <p>Take something complicated. Understand it. Then make it easier.</p>
+
+        <p>That&apos;s how I approach law.</p>
+
+        <p>It&apos;s how I teach.</p>
+
+        <p>
+          It&apos;s how I think about business, technology, systems, and increasingly,
+          life.
+        </p>
+
+        <p>
+          I practice law through{" "}
+          <ExternalOrPlain href={siteConfig.links.legalAccess}>
+            Legal Access Law Offices
+          </ExternalOrPlain>
+          .
+        </p>
+
+        <p>
+          I teach and create through{" "}
+          <ExternalOrPlain href={siteConfig.links.legalGuide}>
+            Legal Guide Philippines
+          </ExternalOrPlain>
+          , where I try to explain the law in a way normal people can actually use.
+        </p>
+
+        <p>
+          I also build businesses and experiments, including{" "}
+          <ExternalOrPlain href={siteConfig.links.projectGateway}>
+            Project Gateway
+          </ExternalOrPlain>
+          , where I&apos;m exploring how AI and better systems can solve very ordinary
+          business problems.
+        </p>
+
+        <p>
+          Over the years, I&apos;ve written books, taught thousands of people, made
+          videos, built courses, advised companies, represented clients, started
+          projects, abandoned projects, and changed my mind more than a few times.
+        </p>
+
+        <p>I consider that a feature.</p>
+
+        <p>
+          This website is where I keep the things I want to remember and the things I
+          think are worth sharing.
+        </p>
+
+        <p>
+          You&apos;ll find essays, videos, notes, lessons, books, projects, tools, and
+          ideas I&apos;m still working through.
+        </p>
+
+        <p>Some are about law.</p>
+
+        <p>Some are about business.</p>
+
+        <p>Some are about AI, leadership, decision-making, or productivity.</p>
+
+        <p>And some are simply things I noticed and didn&apos;t want to forget.</p>
+
+        <p>
+          The thread connecting most of them is something I call{" "}
+          <strong className="font-semibold text-stone-900 dark:text-stone-100">
+            Make It EZ
+          </strong>
+          .
+        </p>
+
+        <p>It doesn&apos;t mean making everything simplistic.</p>
+
+        <p>It means removing unnecessary friction.</p>
+
+        <p>Finding the essential thing.</p>
+
+        <p>
+          Explaining it clearly enough that someone can actually do something with it.
+        </p>
+
+        <p>I&apos;m still figuring a lot of this out.</p>
+
+        <p>This site is part archive, part workshop, and part notebook.</p>
+
+        <p>If you find something useful here, good.</p>
+
+        <p>That&apos;s what it&apos;s for.</p>
       </div>
 
       <section className="mt-14 border-t border-stone-200/80 pt-10 dark:border-stone-800">
         <h2 className="font-serif text-xl font-semibold tracking-tight text-stone-900 dark:text-stone-50">
           A little more formally
         </h2>
-        <div className="mt-5 max-w-2xl space-y-4 text-base leading-relaxed text-stone-700 dark:text-stone-300">
+        <div className="mt-5 space-y-4 text-base leading-relaxed text-stone-700 dark:text-stone-300">
           <p>
-            Erwin Zagala is a Philippine lawyer, teacher, and entrepreneur. He founded{" "}
-            <a
-              href={siteConfig.links.legalAccess}
-              className="font-medium text-teal-800 underline-offset-4 hover:underline dark:text-teal-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            I&apos;m a Filipino lawyer and partner at{" "}
+            <ExternalOrPlain href={siteConfig.links.legalAccess}>
               Legal Access Law Offices
-            </a>
-            , teaches through{" "}
-            <a
-              href={siteConfig.links.legalGuide}
-              className="font-medium text-teal-800 underline-offset-4 hover:underline dark:text-teal-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Legal Guide Philippines
-            </a>
-            , and builds ventures under{" "}
-            <a
-              href={siteConfig.links.projectGateway}
-              className="font-medium text-teal-800 underline-offset-4 hover:underline dark:text-teal-300"
-              {...(siteConfig.links.projectGateway.startsWith("http")
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-            >
-              Project Gateway
-            </a>
+            </ExternalOrPlain>
             .
           </p>
+
+          <p>
+            I also lead training and educational work through{" "}
+            <ExternalOrPlain href={siteConfig.links.legalGuide}>
+              Legal Guide Philippines
+            </ExternalOrPlain>
+            , where I create videos, courses, books, and programs focused on making law
+            easier to understand and apply.
+          </p>
+
+          <p>
+            My work has expanded over the years into business, leadership, technology,
+            AI, systems design, and entrepreneurship.
+          </p>
+
+          <p>I speak, teach, write, advise, and build.</p>
+
+          <p>
+            But if I had to reduce all of that to one sentence, it would probably be
+            this:
+          </p>
+
           <p>I like taking complicated things and making them easier.</p>
-          <p className="pt-2">
+
+          <p className="pt-4 text-sm text-stone-500 dark:text-stone-400">
             <Link
               href="/contact"
               className="font-medium text-teal-800 underline-offset-4 hover:underline dark:text-teal-300"
