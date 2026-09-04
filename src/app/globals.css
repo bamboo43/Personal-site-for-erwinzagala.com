@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, "Times New Roman", serif;
+  --color-cream: #faf8f5;
+  --color-ink: #1c1917;
+  --color-accent: #0f766e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body,
+html.dark body {
+  background-color: #0c0a09;
+  color: #fafaf9;
+}
+
+::selection {
+  background-color: color-mix(in oklab, var(--color-accent) 30%, white);
+}
+
+.prose-ez {
+  --tw-prose-body: #44403c;
+  --tw-prose-headings: #1c1917;
+  --tw-prose-links: #0f766e;
+  --tw-prose-bold: #1c1917;
+  --tw-prose-quotes: #57534e;
+  --tw-prose-quote-borders: #99f6e4;
+  --tw-prose-code: #134e4a;
+}
+
+.dark .prose-ez {
+  --tw-prose-body: #d6d3d1;
+  --tw-prose-headings: #fafaf9;
+  --tw-prose-links: #5eead4;
+  --tw-prose-bold: #fafaf9;
+  --tw-prose-quotes: #a8a29e;
+  --tw-prose-quote-borders: #0f766e;
+  --tw-prose-code: #99f6e4;
+}

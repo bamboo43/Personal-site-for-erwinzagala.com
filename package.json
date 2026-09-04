@@ -1,0 +1,33 @@
+{
+  "name": "erwinzagala-com",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal website for attorney Erwin Zagala",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "^15.5.25",
+    "next-mdx-remote": "^5.0.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "reading-time": "^1.5.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.25",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.8.3"
+  }
+}
