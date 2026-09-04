@@ -74,18 +74,12 @@ export function getAllSlugs(): string[] {
 }
 
 export function getCornerstonePosts(): PostMeta[] {
-  const cornerstones = getAllPosts().filter((p) => p.cornerstone);
-  if (cornerstones.length > 0) return cornerstones;
-  // Fallback curated order for draft samples
-  const preferred = [
-    "reading-contracts-without-the-panic",
-    "what-legal-guide-taught-me-about-teaching",
-    "building-bridges-beyond-the-courtroom",
-  ];
   const all = getAllPosts();
-  return preferred
-    .map((slug) => all.find((p) => p.slug === slug))
-    .filter((p): p is PostMeta => Boolean(p));
+  const cornerstones = all.filter((p) => p.cornerstone);
+  if (cornerstones.length > 0) return cornerstones;
+  const featured = all.filter((p) => p.featured);
+  if (featured.length > 0) return featured;
+  return all;
 }
 
 export function getRecentPosts(limit = 5, excludeSlug?: string): PostMeta[] {
