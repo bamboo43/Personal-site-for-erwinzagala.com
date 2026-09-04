@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/posts";
 import { siteConfig } from "@/lib/site";
+import { getVideos } from "@/lib/videos";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts().map((post) => ({
@@ -8,6 +9,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: post.date ? new Date(post.date) : new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
+  }));
+
+  const videos = getVideos().map((video) => ({
+    url: `${siteConfig.url}/watch/${video.id}`,
+    lastModified: video.date ? new Date(video.date) : new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.5,
   }));
 
   return [
@@ -42,5 +50,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     ...posts,
+    ...videos,
   ];
 }

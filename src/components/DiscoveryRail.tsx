@@ -108,10 +108,16 @@ export function DiscoveryRail({ excludeSlug }: { excludeSlug?: string }) {
       {video ? (
         <RailBlock title="Watch">
           <Link
-            href="/watch"
+            href={`/watch/${video.id}`}
             className="block text-sm leading-snug text-stone-700 hover:text-teal-800 dark:text-stone-300 dark:hover:text-teal-300"
           >
             {video.title}
+          </Link>
+          <Link
+            href="/watch"
+            className="mt-2 inline-block text-xs font-medium text-teal-800 hover:underline dark:text-teal-300"
+          >
+            All videos →
           </Link>
         </RailBlock>
       ) : null}

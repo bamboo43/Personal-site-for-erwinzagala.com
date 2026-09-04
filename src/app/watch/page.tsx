@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Videos and explainers from Erwin Zagala and Legal Guide Philippines — teaching made clearer.",
   openGraph: {
     title: `Watch · ${siteConfig.name}`,
-    description: "Featured and recent videos — placeholders for the draft site.",
+    description: "Full Legal Guide Philippines video library on erwinzagala.com.",
   },
 };
 
@@ -26,11 +26,19 @@ export default function WatchPage() {
         Teaching & explainers
       </h1>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-stone-600 dark:text-stone-400">
-        Sample video cards for Legal Guide–style lessons. Real embeds and episodes can
-        replace these placeholders later.
+        {videos.length} videos from{" "}
+        <a
+          href={siteConfig.links.legalGuide}
+          className="font-medium text-teal-800 underline-offset-4 hover:underline dark:text-teal-300"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Legal Guide Philippines
+        </a>
+        — plain-language law explainers. Open one here, or watch on YouTube.
       </p>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2">
+      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {videos.map((video) => (
           <VideoCard key={video.id} video={video} />
         ))}

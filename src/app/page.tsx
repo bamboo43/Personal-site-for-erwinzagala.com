@@ -15,7 +15,7 @@ import { siteConfig } from "@/lib/site";
 export default function HomePage() {
   const startHere = getCornerstonePosts().slice(0, 4);
   const latest = getAllPosts().slice(0, 4);
-  const videos = getFeaturedVideos(2);
+  const videos = getFeaturedVideos(4);
   const things = getThings();
   const categories = getCategories();
 
@@ -84,7 +84,7 @@ export default function HomePage() {
         <Container width="wide">
           <SectionHeading
             title="Watch"
-            description="Teaching and explainers — placeholders until the real library lands."
+            description="Recent explainers from Legal Guide Philippines."
             href="/watch"
             linkLabel="All videos →"
           />
