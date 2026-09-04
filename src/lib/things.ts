@@ -5,6 +5,8 @@ export type Thing = {
   kind: "book" | "course" | "tool" | "project";
   href?: string;
   status?: "available" | "coming-soon" | "draft";
+  /** Path under /public, e.g. /books/notary-not-included.jpg */
+  image?: string;
 };
 
 /** Books lead; courses and drafts follow. */
@@ -17,6 +19,7 @@ export const things: Thing[] = [
     kind: "book",
     href: "https://shopee.ph/The-Notary-Not-Included-i.1200562858.25167986088",
     status: "available",
+    image: "/books/notary-not-included.jpg",
   },
   {
     id: "the-complete-employee-discipline-system",
@@ -26,6 +29,7 @@ export const things: Thing[] = [
     kind: "book",
     href: "https://shopee.ph/The-Complete-Employee-Discipline-System-i.1200562858.24869192895",
     status: "available",
+    image: "/books/employee-discipline-system.jpg",
   },
   {
     id: "make-it-ez-notes",

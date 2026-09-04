@@ -10,6 +10,21 @@ const kindLabel: Record<Thing["kind"], string> = {
 export function ThingCard({ thing }: { thing: Thing }) {
   const inner = (
     <>
+      {thing.image ? (
+        <div className="mb-4 flex justify-center">
+          <div className="relative w-[7.5rem] shrink-0 overflow-hidden rounded-md bg-slate-100 shadow-sm ring-1 ring-slate-200/80 dark:bg-slate-800 dark:ring-slate-700 sm:w-36">
+            <div className="aspect-[3/4]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={thing.image}
+                alt=""
+                className="h-full w-full object-cover object-top"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      ) : null}
       <span className="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">
         {kindLabel[thing.kind]}
         {thing.status === "coming-soon" ? " · Coming soon" : ""}
