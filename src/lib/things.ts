@@ -7,13 +7,31 @@ export type Thing = {
   status?: "available" | "coming-soon" | "draft";
 };
 
-/** Understated placeholders for books / courses / tools. */
+/** Books lead; courses and drafts follow. */
 export const things: Thing[] = [
+  {
+    id: "the-notary-not-included",
+    title: "The Notary Not Included",
+    description:
+      "A practical companion for Philippine notarial work — what the forms leave out, and how to handle it.",
+    kind: "book",
+    href: "https://shopee.ph/The-Notary-Not-Included-i.1200562858.25167986088",
+    status: "available",
+  },
+  {
+    id: "the-complete-employee-discipline-system",
+    title: "The Complete Employee Discipline System",
+    description:
+      "A clear system for employer discipline and labor process — fair, documented, and usable day to day.",
+    kind: "book",
+    href: "https://shopee.ph/The-Complete-Employee-Discipline-System-i.1200562858.24869192895",
+    status: "available",
+  },
   {
     id: "make-it-ez-notes",
     title: "Make It EZ notes",
     description:
-      "A growing set of frameworks for making complicated decisions clearer — draft placeholder.",
+      "A growing set of frameworks for making complicated decisions clearer.",
     kind: "book",
     status: "coming-soon",
   },

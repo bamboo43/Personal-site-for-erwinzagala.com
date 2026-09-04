@@ -107,6 +107,16 @@ export default function HomePage() {
               <ThingCard key={thing.id} thing={thing} />
             ))}
           </div>
+          <p className="mt-6">
+            <a
+              href={siteConfig.links.shopee}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-teal-800 hover:underline dark:text-teal-300"
+            >
+              More on Shopee →
+            </a>
+          </p>
         </Container>
       </section>
 
