@@ -33,10 +33,16 @@ export default function HomePage() {
             Ideas, essays, teaching, and tools — a personal home for making complicated
             things easier to understand, decide, and do. Make It EZ.
           </p>
-          <p className="mt-6">
+          <p className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <Link
+              href="/blog/start-here"
+              className="text-slate-500 underline-offset-4 hover:text-blue-800 hover:underline dark:text-slate-400 dark:hover:text-blue-400"
+            >
+              Start here
+            </Link>
             <Link
               href="#ask"
-              className="text-sm text-slate-500 underline-offset-4 hover:text-blue-800 hover:underline dark:text-slate-400 dark:hover:text-blue-400"
+              className="text-slate-500 underline-offset-4 hover:text-blue-800 hover:underline dark:text-slate-400 dark:hover:text-blue-400"
             >
               Not sure where to start? Ask my AI assistant.
             </Link>
