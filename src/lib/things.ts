@@ -13,7 +13,7 @@ export type Thing = {
 export const things: Thing[] = [
   {
     id: "the-notary-not-included",
-    title: "The Notary Not Included",
+    title: "Notary Not Included",
     description:
       "A practical companion for Philippine notarial work — what the forms leave out, and how to handle it.",
     kind: "book",
