@@ -40,12 +40,6 @@ export default function HomePage() {
             >
               Start here
             </Link>
-            <Link
-              href="#ask"
-              className="text-slate-500 underline-offset-4 hover:text-blue-800 hover:underline dark:text-slate-400 dark:hover:text-blue-400"
-            >
-              Not sure where to start? Ask my AI assistant.
-            </Link>
           </p>
         </Container>
       </section>
@@ -187,14 +181,15 @@ export default function HomePage() {
         <Container width="wide">
           <EmailSignup />
           <p id="ask" className="mt-8 text-sm text-slate-500 dark:text-slate-400">
-            <span className="font-medium text-slate-600 dark:text-slate-300">
-              Not sure where to start?
-            </span>{" "}
-            Ask my AI assistant — coming in a later phase. For now,{" "}
+            Not sure where to start?{" "}
+            <Link href="/blog/start-here" className="text-blue-800 underline-offset-4 hover:underline dark:text-blue-400">
+              Start here
+            </Link>
+            ,{" "}
             <Link href="/blog" className="text-blue-800 underline-offset-4 hover:underline dark:text-blue-400">
               browse Ideas
-            </Link>{" "}
-            or{" "}
+            </Link>
+            , or{" "}
             <Link href="/contact" className="text-blue-800 underline-offset-4 hover:underline dark:text-blue-400">
               say hello
             </Link>

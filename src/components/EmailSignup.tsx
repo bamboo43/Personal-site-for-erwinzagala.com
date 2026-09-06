@@ -29,7 +29,6 @@ export function EmailSignup({ compact = false }: { compact?: boolean }) {
       </h2>
       <p className="mt-2 max-w-lg text-sm leading-relaxed text-slate-600 dark:text-slate-400">
         Occasionally, I&apos;ll send you something useful — no funnel, no weekly barrage.
-        For now this opens a short email; a real list comes later.
       </p>
       <a
         href={`mailto:${siteConfig.email}?subject=${subject}&body=${body}`}
