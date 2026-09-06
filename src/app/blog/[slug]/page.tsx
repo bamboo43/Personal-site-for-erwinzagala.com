@@ -76,9 +76,6 @@ export default async function BlogPostPage({ params }: PageProps) {
             <h1 className="mt-3 font-serif text-3xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-[2.25rem] dark:text-slate-50">
               {post.title}
             </h1>
-            <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
-              {post.description}
-            </p>
             {post.tags.length > 0 && (
               <ul className="mt-5 flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
