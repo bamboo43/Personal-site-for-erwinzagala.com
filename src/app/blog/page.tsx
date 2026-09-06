@@ -27,11 +27,6 @@ export default function BlogIndexPage() {
       <h1 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-slate-50">
         Essays & notes
       </h1>
-      <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-400">
-        Sample posts for this draft — realistic themes around Philippine law, practice,
-        teaching, and the Make It EZ mindset. Treat them as placeholders until real
-        publishing begins.
-      </p>
 
       <div className="mt-8 flex flex-wrap gap-2">
         {categories.map((cat) => (
