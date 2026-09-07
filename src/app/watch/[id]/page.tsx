@@ -23,14 +23,32 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const video = getVideoById(id);
   if (!video) return { title: "Video not found" };
 
+  const canonical = `/watch/${video.id}`;
+  const thumbnail = video.youtubeId
+    ? `https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg`
+    : undefined;
+
   return {
     title: video.title,
     description: video.description,
+    authors: [{ name: siteConfig.name, url: siteConfig.url }],
+    alternates: {
+      canonical,
+    },
     openGraph: {
       title: video.title,
       description: video.description,
-      url: `${siteConfig.url}/watch/${video.id}`,
+      url: `${siteConfig.url}${canonical}`,
+      siteName: siteConfig.name,
+      locale: "en_PH",
       type: "video.other",
+      ...(thumbnail ? { images: [{ url: thumbnail }] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: video.title,
+      description: video.description,
+      ...(thumbnail ? { images: [thumbnail] } : {}),
     },
   };
 }

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Container } from "@/components/Container";
 import { DiscoveryRail, ExploreMore } from "@/components/DiscoveryRail";
+import { JsonLd } from "@/components/JsonLd";
 import { getAllSlugs, getPostBySlug } from "@/lib/posts";
 import { siteConfig } from "@/lib/site";
 
@@ -20,15 +21,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getPostBySlug(slug);
   if (!post) return { title: "Post not found" };
 
+  const canonical = `/blog/${post.slug}`;
+
   return {
     title: post.title,
     description: post.description,
+    authors: [{ name: siteConfig.name, url: siteConfig.url }],
+    alternates: {
+      canonical,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
       publishedTime: post.date,
-      url: `${siteConfig.url}/blog/${post.slug}`,
+      url: `${siteConfig.url}${canonical}`,
+      siteName: siteConfig.name,
+      locale: "en_PH",
+      authors: [siteConfig.name],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
     },
   };
 }
@@ -50,8 +65,34 @@ export default async function BlogPostPage({ params }: PageProps) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  const postUrl = `${siteConfig.url}/blog/${post.slug}`;
+  const blogPostingJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    url: postUrl,
+    publisher: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+
   return (
     <Container width="rail" className="py-10 sm:py-14">
+      <JsonLd data={blogPostingJsonLd} />
       <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_240px] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_260px] xl:gap-16">
         <div>
           <Link

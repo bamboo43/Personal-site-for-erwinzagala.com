@@ -6,7 +6,20 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description: `Get in touch with Erwin Zagala at ${siteConfig.email}.`,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  alternates: {
+    canonical: "/contact",
+  },
   openGraph: {
+    title: `Contact · ${siteConfig.name}`,
+    description: `Email ${siteConfig.email} or send a message via the contact form.`,
+    url: `${siteConfig.url}/contact`,
+    siteName: siteConfig.name,
+    locale: "en_PH",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
     title: `Contact · ${siteConfig.name}`,
     description: `Email ${siteConfig.email} or send a message via the contact form.`,
   },

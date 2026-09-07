@@ -8,7 +8,20 @@ export const metadata: Metadata = {
   title: "Watch",
   description:
     "Videos and explainers from Erwin Zagala and Legal Guide Philippines — teaching made clearer.",
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  alternates: {
+    canonical: "/watch",
+  },
   openGraph: {
+    title: `Watch · ${siteConfig.name}`,
+    description: "Full Legal Guide Philippines video library on erwinzagala.com.",
+    url: `${siteConfig.url}/watch`,
+    siteName: siteConfig.name,
+    locale: "en_PH",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
     title: `Watch · ${siteConfig.name}`,
     description: "Full Legal Guide Philippines video library on erwinzagala.com.",
   },

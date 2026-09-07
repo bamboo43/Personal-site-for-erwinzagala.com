@@ -8,7 +8,20 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "About Erwin Zagala — Filipino lawyer, teacher, and builder. Partner at Legal Access; Legal Guide Philippines.",
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  alternates: {
+    canonical: "/about",
+  },
   openGraph: {
+    title: `About · ${siteConfig.name}`,
+    description: "A plain, formal introduction from Erwin Zagala.",
+    url: `${siteConfig.url}/about`,
+    siteName: siteConfig.name,
+    locale: "en_PH",
+    type: "profile",
+  },
+  twitter: {
+    card: "summary_large_image",
     title: `About · ${siteConfig.name}`,
     description: "A plain, formal introduction from Erwin Zagala.",
   },

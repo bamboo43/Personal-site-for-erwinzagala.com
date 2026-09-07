@@ -3,12 +3,19 @@ import { getAllPosts } from "@/lib/posts";
 import { siteConfig } from "@/lib/site";
 import { getVideos } from "@/lib/videos";
 
+function postPriority(slug: string, featured?: boolean, cornerstone?: boolean) {
+  if (slug === "start-here") return 0.95;
+  if (cornerstone) return 0.85;
+  if (featured) return 0.8;
+  return 0.7;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts().map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
     lastModified: post.date ? new Date(post.date) : new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: postPriority(post.slug, post.featured, post.cornerstone),
   }));
 
   const videos = getVideos().map((video) => ({

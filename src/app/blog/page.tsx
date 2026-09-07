@@ -9,7 +9,20 @@ export const metadata: Metadata = {
   title: "Ideas",
   description:
     "Essays and reflections on clarity, law, teaching, work, and making complicated things easier.",
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  alternates: {
+    canonical: "/blog",
+  },
   openGraph: {
+    title: `Ideas · ${siteConfig.name}`,
+    description: "Essays, notes, and frameworks from Erwin Zagala.",
+    url: `${siteConfig.url}/blog`,
+    siteName: siteConfig.name,
+    locale: "en_PH",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
     title: `Ideas · ${siteConfig.name}`,
     description: "Essays, notes, and frameworks from Erwin Zagala.",
   },
