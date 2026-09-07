@@ -42,25 +42,31 @@ export default function HomePage() {
   return (
     <>
       <section className="border-b border-slate-200/70 dark:border-slate-800">
-        <Container width="wide" className="py-12 sm:py-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
-            Erwin Zagala
-          </p>
-          <h1 className="mt-3 max-w-2xl font-serif text-3xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-4xl dark:text-slate-50">
-            {siteConfig.tagline}
-          </h1>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-300">
-            Ideas, essays, teaching, and tools — a personal home for making complicated
-            things easier to understand, decide, and do. Make It EZ.
-          </p>
-          <p className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-            <Link
-              href="/blog/start-here"
-              className="text-slate-500 underline-offset-4 hover:text-blue-800 hover:underline dark:text-slate-400 dark:hover:text-blue-400"
-            >
-              Start here
-            </Link>
-          </p>
+        <Container width="wide" className="py-16 sm:py-20 md:py-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+              Make It EZ
+            </p>
+            <h1 className="mt-4 font-serif text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl md:text-6xl dark:text-slate-50">
+              Make complicated things{" "}
+              <span className="underline decoration-slate-300 decoration-2 underline-offset-4 dark:decoration-slate-600">
+                easier
+              </span>
+              .
+            </h1>
+            <p className="mt-6 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
+              Ideas, essays, teaching, and tools — personal home for clarity in law,
+              work, and life. I&apos;m Erwin Zagala.
+            </p>
+            <p className="mt-8">
+              <Link
+                href="/blog/start-here"
+                className="text-sm font-medium text-blue-800 hover:underline dark:text-blue-400"
+              >
+                Read this first →
+              </Link>
+            </p>
+          </div>
         </Container>
       </section>
 
