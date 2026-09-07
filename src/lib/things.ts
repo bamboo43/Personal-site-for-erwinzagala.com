@@ -9,7 +9,7 @@ export type Thing = {
   image?: string;
 };
 
-/** Books lead; courses and drafts follow. */
+/** Available books and courses first; coming-soon last. */
 export const things: Thing[] = [
   {
     id: "the-notary-not-included",
@@ -25,11 +25,29 @@ export const things: Thing[] = [
     id: "the-complete-employee-discipline-system",
     title: "The Complete Employee Discipline System",
     description:
-      "A clear system for employer discipline and labor process — fair, documented, and usable day to day.",
+      "A clear system for employer discipline and labor process — fair, documented, and usable day to day. Instant PDF on Legal Guide Offer; also on Shopee.",
     kind: "book",
-    href: "https://shopee.ph/The-Complete-Employee-Discipline-System-i.1200562858.24869192895",
+    href: "https://offer.legalguide.ph/employeedisciplineebook",
     status: "available",
     image: "/books/employee-discipline-system.jpg",
+  },
+  {
+    id: "estate-settlement-plain-filipino",
+    title: "Estate Settlement, in Plain Filipino",
+    description:
+      "Free 4-lesson recorded video series for families who just lost a loved one — process, properties, deadlines, and how to avoid costly penalties. Start without signing up.",
+    kind: "course",
+    href: "https://offer.legalguide.ph/funeralhome",
+    status: "available",
+  },
+  {
+    id: "legal-guide-resource-center",
+    title: "Legal Guide Resource Center",
+    description:
+      "Directory of Legal Guide Philippines books, free guides, and recorded workshops that are ready now.",
+    kind: "project",
+    href: "https://offer.legalguide.ph",
+    status: "available",
   },
   {
     id: "make-it-ez-notes",
@@ -39,17 +57,13 @@ export const things: Thing[] = [
     kind: "book",
     status: "coming-soon",
   },
-  {
-    id: "legal-guide-explainers",
-    title: "Legal Guide explainers",
-    description:
-      "Practical Philippine law explainers for students and first-time clients.",
-    kind: "course",
-    href: "https://legalguide.ph",
-    status: "available",
-  },
 ];
 
 export function getThings(): Thing[] {
   return things;
+}
+
+/** Only ready downloads/enrollments — excludes coming-soon and draft. */
+export function getAvailableThings(): Thing[] {
+  return things.filter((t) => t.status === "available" || (!t.status && t.href));
 }

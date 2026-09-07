@@ -1,6 +1,6 @@
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { siteConfig } from "@/lib/site";
-import { getThings } from "@/lib/things";
+import { getAvailableThings } from "@/lib/things";
 
 const SITE = siteConfig.url;
 
@@ -79,21 +79,23 @@ export function buildPublishedPostsSection(full = false): string {
 }
 
 export function buildThingsAndRelatedSection(): string {
-  const books = getThings().filter((t) => t.kind === "book");
+  const ready = getAvailableThings();
   const lines: string[] = [
-    "## Things I've Made (books and related)",
+    "## Things I've Made (ready now)",
     "",
-    "Listed on the home page under Things I've Made. Purchase links often go to Shopee.",
+    "Listed on the home page under Things I've Made. Includes Legal Guide Offer resources that are ready for download or enrollment (coming-soon items omitted).",
     "",
   ];
 
-  for (const thing of books) {
-    const status = thing.status ? ` (${thing.status})` : "";
+  for (const thing of ready) {
     const href = thing.href ? ` — ${thing.href}` : "";
-    lines.push(`- ${thing.title}${status}: ${thing.description}${href}`);
+    lines.push(`- ${thing.title} (${thing.kind}): ${thing.description}${href}`);
   }
 
   lines.push("");
+  lines.push(
+    "Legal Guide Offer / Resource Center: https://offer.legalguide.ph — directory of free guides, ebooks, and recorded courses.",
+  );
   lines.push("Shopee storefront (Legal Guide): " + siteConfig.links.shopee);
   lines.push("");
   lines.push("## Related properties (not this site)");

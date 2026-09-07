@@ -12,6 +12,7 @@ export const siteConfig = {
     legalAccess: "https://legalaccess.ph",
     projectGateway: "#",
     shopee: "https://shopee.ph/legalguide.ph",
+    offerLegalGuide: "https://offer.legalguide.ph",
   },
   githubRepo: "https://github.com/bamboo43/Personal-site-for-erwinzagala.com",
 } as const;
