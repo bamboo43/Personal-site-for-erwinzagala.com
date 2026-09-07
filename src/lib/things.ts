@@ -33,6 +33,7 @@ export const things: Thing[] = [
   },
   {
     id: "estate-settlement-plain-filipino",
+    image: "/things/estate-settlement.jpg",
     title: "Estate Settlement, in Plain Filipino",
     description:
       "Free 4-lesson recorded video series for families who just lost a loved one — process, properties, deadlines, and how to avoid costly penalties. Start without signing up.",
@@ -42,6 +43,7 @@ export const things: Thing[] = [
   },
   {
     id: "legal-guide-resource-center",
+    image: "/things/resource-center.jpg",
     title: "Legal Guide Resource Center",
     description:
       "Directory of Legal Guide Philippines books, free guides, and recorded workshops that are ready now.",

@@ -7,18 +7,34 @@ const kindLabel: Record<Thing["kind"], string> = {
   project: "Project",
 };
 
+function imageFrameClass(kind: Thing["kind"]): string {
+  if (kind === "book") {
+    return "relative w-[7.5rem] shrink-0 overflow-hidden rounded-md bg-slate-100 shadow-sm ring-1 ring-slate-200/80 dark:bg-slate-800 dark:ring-slate-700 sm:w-36";
+  }
+  if (kind === "course") {
+    return "relative w-full max-w-[12rem] shrink-0 overflow-hidden rounded-md bg-slate-100 shadow-sm ring-1 ring-slate-200/80 dark:bg-slate-800 dark:ring-slate-700 sm:max-w-[14rem]";
+  }
+  return "relative w-full overflow-hidden rounded-md bg-slate-100 shadow-sm ring-1 ring-slate-200/80 dark:bg-slate-800 dark:ring-slate-700";
+}
+
+function imageAspectClass(kind: Thing["kind"]): string {
+  if (kind === "book") return "aspect-[3/4]";
+  if (kind === "course") return "aspect-square";
+  return "aspect-[16/9]";
+}
+
 export function ThingCard({ thing }: { thing: Thing }) {
   const inner = (
     <>
       {thing.image ? (
         <div className="mb-4 flex justify-center">
-          <div className="relative w-[7.5rem] shrink-0 overflow-hidden rounded-md bg-slate-100 shadow-sm ring-1 ring-slate-200/80 dark:bg-slate-800 dark:ring-slate-700 sm:w-36">
-            <div className="aspect-[3/4]">
+          <div className={imageFrameClass(thing.kind)}>
+            <div className={imageAspectClass(thing.kind)}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={thing.image}
                 alt=""
-                className="h-full w-full object-cover object-top"
+                className="h-full w-full object-cover object-center"
                 loading="lazy"
               />
             </div>
