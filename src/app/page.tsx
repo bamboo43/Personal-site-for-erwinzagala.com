@@ -8,7 +8,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ThingCard } from "@/components/ThingCard";
 import { VideoCard } from "@/components/VideoCard";
 import { getCategories } from "@/lib/categories";
-import { getAllPosts, getCornerstonePosts } from "@/lib/posts";
+import { getAllPosts } from "@/lib/posts";
 import { getThings } from "@/lib/things";
 import { getFeaturedVideos } from "@/lib/videos";
 import { siteConfig } from "@/lib/site";
@@ -34,7 +34,6 @@ export const metadata: Metadata = {
 
 
 export default function HomePage() {
-  const startHere = getCornerstonePosts().slice(0, 4);
   const latest = getAllPosts().slice(0, 4);
   const videos = getFeaturedVideos(4);
   const things = getThings();
@@ -67,15 +66,18 @@ export default function HomePage() {
 
       <section className="py-12 sm:py-14">
         <Container width="wide">
-          <SectionHeading
-            title="Start Here"
-            description="Cornerstone pieces — deliberately chosen, not just the newest."
-          />
-          <div className="grid gap-3 sm:grid-cols-2">
-            {startHere.map((post) => (
-              <PostCard key={post.slug} post={post} />
-            ))}
-          </div>
+          <SectionHeading title="Start here" />
+          <p className="max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-300">
+            New here? One short page on who I am, why this site exists, and what you can expect to find.
+          </p>
+          <p className="mt-4">
+            <Link
+              href="/blog/start-here"
+              className="text-sm font-medium text-blue-800 hover:underline dark:text-blue-400"
+            >
+              Read this first →
+            </Link>
+          </p>
         </Container>
       </section>
 
