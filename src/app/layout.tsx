@@ -96,13 +96,35 @@ const personJsonLd = {
   "@type": "Person",
   name: siteConfig.name,
   url: siteConfig.url,
-  jobTitle: "Lawyer, teacher, and builder",
+  jobTitle: ["Lawyer", "Teacher", "Entrepreneur"],
   description: siteConfig.description,
   email: siteConfig.email,
   address: {
     "@type": "PostalAddress",
     addressCountry: "PH",
   },
+  worksFor: [
+    {
+      "@type": "Organization",
+      name: "Legal Access Law Offices",
+      url: siteConfig.links.legalAccess,
+    },
+  ],
+  affiliation: [
+    {
+      "@type": "Organization",
+      name: "Legal Guide Philippines",
+      url: siteConfig.links.legalGuide,
+    },
+  ],
+  knowsAbout: [
+    "Make It EZ",
+    "Philippine law teaching",
+    "Legal clarity",
+    "Systems design",
+    "Entrepreneurship",
+    "Making complicated things easier",
+  ],
   sameAs,
 };
 

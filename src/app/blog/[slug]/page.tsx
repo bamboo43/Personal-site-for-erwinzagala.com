@@ -78,6 +78,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       name: siteConfig.name,
       url: siteConfig.url,
     },
+    isAccessibleForFree: true,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": postUrl,

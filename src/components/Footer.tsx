@@ -36,6 +36,12 @@ export function Footer() {
             >
               Email
             </a>
+            <Link
+              href="/llms.txt"
+              className="text-slate-500 hover:text-blue-800 dark:text-slate-500 dark:hover:text-blue-400"
+            >
+              llms.txt
+            </Link>
           </div>
           <p className="text-xs text-slate-500">
             © {year} {siteConfig.name}
