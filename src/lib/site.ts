@@ -10,7 +10,7 @@ export const siteConfig = {
   links: {
     legalGuide: "https://legalguide.ph",
     legalAccess: "https://legalaccess.ph",
-    projectGateway: "#",
+    projectGateway: "https://projectgateway.ph",
     shopee: "https://shopee.ph/legalguide.ph",
     offerLegalGuide: "https://offer.legalguide.ph",
   },

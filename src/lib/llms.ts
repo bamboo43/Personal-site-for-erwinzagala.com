@@ -110,6 +110,9 @@ export function buildThingsAndRelatedSection(): string {
   lines.push(
     `- Legal Access Law Offices — https://legalaccess.ph — law practice / firm site.`,
   );
+  lines.push(
+    `- Project Gateway — https://projectgateway.ph — business / systems / AI experiments.`,
+  );
   lines.push("");
   lines.push("## Contact");
   lines.push("");

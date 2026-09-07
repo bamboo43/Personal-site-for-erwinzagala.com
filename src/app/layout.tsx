@@ -73,6 +73,7 @@ const themeInitScript = `(function(){try{var t=localStorage.getItem("theme");var
 const sameAs = [
   siteConfig.links.legalGuide,
   siteConfig.links.legalAccess,
+  siteConfig.links.projectGateway,
   siteConfig.links.shopee,
 ];
 
