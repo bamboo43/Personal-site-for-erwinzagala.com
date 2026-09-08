@@ -58,10 +58,11 @@ export default function HomePage() {
               Ideas, essays, teaching, and tools — personal home for clarity in law,
               work, and life. I&apos;m Erwin Zagala.
             </p>
-            <p className="mt-8">
+            <p className="mt-8 text-sm text-slate-600 dark:text-slate-300">
+              New here?{" "}
               <Link
                 href="/blog/start-here"
-                className="text-sm font-medium text-blue-800 hover:underline dark:text-blue-400"
+                className="font-medium text-blue-800 hover:underline dark:text-blue-400"
               >
                 Read this first →
               </Link>
@@ -70,22 +71,6 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-12 sm:py-14">
-        <Container width="wide">
-          <SectionHeading title="Start here" />
-          <p className="max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-300">
-            New here? One short page on who I am, why this site exists, and what you can expect to find.
-          </p>
-          <p className="mt-4">
-            <Link
-              href="/blog/start-here"
-              className="text-sm font-medium text-blue-800 hover:underline dark:text-blue-400"
-            >
-              Read this first →
-            </Link>
-          </p>
-        </Container>
-      </section>
 
       <section className="border-t border-slate-200/70 py-12 dark:border-slate-800 sm:py-14">
         <Container width="wide">
