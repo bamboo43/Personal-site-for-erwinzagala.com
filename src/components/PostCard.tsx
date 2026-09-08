@@ -18,7 +18,7 @@ function Thumb({ src, quiet }: { src: string; quiet?: boolean }) {
     <div
       className={
         quiet
-          ? "relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-slate-100 ring-1 ring-slate-200/80 dark:bg-slate-800 dark:ring-slate-700 sm:h-[4.5rem] sm:w-[4.5rem]"
+          ? "relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-slate-100 ring-1 ring-slate-200/80 dark:bg-slate-800 dark:ring-slate-700 sm:h-24 sm:w-24"
           : "relative mb-4 aspect-[16/9] w-full overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-200/80 dark:bg-slate-800 dark:ring-slate-700"
       }
     >
