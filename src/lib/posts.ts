@@ -16,6 +16,8 @@ export type PostMeta = {
   cornerstone?: boolean;
   readingTime: string;
   sample?: boolean;
+  /** Featured/cover image path under public/, e.g. /blog/.../photo.jpg */
+  image?: string;
 };
 
 export type Post = PostMeta & {
@@ -46,6 +48,7 @@ function parsePost(filename: string): Post {
     cornerstone: Boolean(data.cornerstone),
     sample: data.sample !== false,
     readingTime: stats.text,
+    image: data.image ? String(data.image) : undefined,
     content,
   };
 }

@@ -39,11 +39,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: siteConfig.name,
       locale: "en_PH",
       authors: [siteConfig.name],
+      ...(post.image
+        ? { images: [{ url: post.image, alt: post.title }] }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
+      ...(post.image ? { images: [post.image] } : {}),
     },
   };
 }
@@ -79,6 +83,9 @@ export default async function BlogPostPage({ params }: PageProps) {
       url: siteConfig.url,
     },
     isAccessibleForFree: true,
+    ...(post.image
+      ? { image: [`${siteConfig.url}${post.image}`] }
+      : {}),
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": postUrl,
@@ -118,6 +125,16 @@ export default async function BlogPostPage({ params }: PageProps) {
             <h1 className="mt-3 font-serif text-3xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-[2.25rem] dark:text-slate-50">
               {post.title}
             </h1>
+            {post.image ? (
+              <div className="mt-6 max-w-2xl overflow-hidden rounded-xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={post.image}
+                  alt=""
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            ) : null}
             {post.tags.length > 0 && (
               <ul className="mt-5 flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
