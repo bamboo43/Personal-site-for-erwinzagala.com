@@ -48,9 +48,9 @@ export default function HomePage() {
               Make It EZ
             </p>
             <h1 className="mt-4 font-serif text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl md:text-6xl dark:text-slate-50">
-              Make complicated things{" "}
+              Simple. Then{" "}
               <span className="underline decoration-slate-300 decoration-2 underline-offset-4 dark:decoration-slate-600">
-                easier
+                usable
               </span>
               .
             </h1>

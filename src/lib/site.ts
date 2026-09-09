@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Erwin Zagala",
   title: "Erwin Zagala — Make It EZ",
-  tagline: "Make complicated things easier.",
+  tagline: "Simple. Then usable.",
   description:
     "Ideas, essays, teaching, and tools from Erwin Zagala. Make It EZ — making complicated things easier to understand, decide, and do.",
   url: "https://erwinzagala.com",
